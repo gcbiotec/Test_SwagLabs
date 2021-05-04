@@ -19,4 +19,14 @@ public class AddToCartPage {
 
         return this.driver.findElement(By.id("add-to-cart-test.allthethings()-t-shirt-(red)"));
     }
+
+    public WebElement ViewCart(){
+
+        return this.driver.findElement(By.id("shopping_cart_container"));
+    }
+
+    public WebElement getTextTitle() {
+
+        return  this.driver.findElement(By.xpath("//div[@class='inventory_details_name large_size']"));
+    }
 }
