@@ -21,7 +21,7 @@ public class ProductSelectTask {
     }
     public void selecionarProduto() {
         validaProductSelect();
-        productSelectPage.getChooseProduct();
+        productSelectPage.getChooseProduct().click();
 
     }
 
