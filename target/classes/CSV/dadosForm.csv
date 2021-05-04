@@ -1,2 +1,2 @@
-username, password
-standard_user, secret_sauce
+username, password, firstname, lastname, postcode
+standard_user, secret_sauce, gabriel, silva, 5648464

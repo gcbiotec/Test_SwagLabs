@@ -14,7 +14,7 @@ public class BaseTest extends DriverManager {
     private String url = "https://www.saucedemo.com/";
 
     public WebDriver getDriver(){
-        return driver = getDriver(TypeDriver.CHROME);
+        return driver = getDriver(TypeDriver.FIREFOX);
 
     }
     @BeforeEach

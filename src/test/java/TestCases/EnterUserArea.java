@@ -4,10 +4,7 @@ import FrameWork.BaseTest;
 import FrameWork.Report.Report;
 import FrameWork.Report.ScreenShot;
 import PageObjects.ProductSelectPage;
-import Tasks.AddToCartTask;
-import Tasks.CheckoutTask;
-import Tasks.HomeTask;
-import Tasks.ProductSelectTask;
+import Tasks.*;
 import com.aventstack.extentreports.Status;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -21,10 +18,14 @@ public class EnterUserArea extends BaseTest {
     private ProductSelectTask productSelectTask = new ProductSelectTask(driver);
     private AddToCartTask addToCartTask = new AddToCartTask(driver);
     private CheckoutTask checkoutTask = new CheckoutTask(driver);
+    private CheckInfoTask checkInfoTask = new CheckInfoTask(driver);
+    private OverviewTask overviewTask = new OverviewTask(driver);
+    private LogoutTask logoutTask = new LogoutTask(driver);
 
     @ParameterizedTest
     @CsvFileSource(resources = "/CSV/dadosForm.csv",numLinesToSkip = 1)
-    public void AcessarCadastroComDadosUsernamePassword(String username,String password){
+    public void AcessarCadastroComDadosUsernamePassword(String username,String password,
+                                                        String firstname, String lastname, String postcode){
         try{
             Report.startReport("Acessando área de usuário");
             homeTask.acessarPageAutomacaoWeb();
@@ -32,6 +33,10 @@ public class EnterUserArea extends BaseTest {
             productSelectTask.selecionarProduto();
             addToCartTask.adicionarCarrinho();
             checkoutTask.realizarCheckout();
+            checkInfoTask.preencherDadosCheckInfo(firstname,lastname,postcode);
+            overviewTask.finalizar();
+            logoutTask.fazerLogout();
+
 
         }catch (Exception e){
             Report.extentTest.log(Status.ERROR, e.getMessage(), ScreenShot.base64(driver));

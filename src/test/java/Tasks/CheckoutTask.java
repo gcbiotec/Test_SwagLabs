@@ -1,8 +1,12 @@
 package Tasks;
 
 import FrameWork.Browser.Waits;
+import FrameWork.Report.Report;
+import FrameWork.Report.ScreenShot;
 import PageObjects.AddToCartPage;
 import PageObjects.CheckoutPage;
+import com.aventstack.extentreports.Status;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 
 public class CheckoutTask {
@@ -18,7 +22,18 @@ public class CheckoutTask {
     }
 
     public void realizarCheckout(){
-        
+        validaRealizarCheckout();
         checkoutPage.checkoutButton().click();
+    }
+
+    private void validaRealizarCheckout() {
+        try {
+            waits.loadElement(checkoutPage.getTextTitle());
+            String titulo = checkoutPage.getTextTitle().getText();
+            Assertions.assertEquals("Test.allTheThings() T-Shirt (Red)", titulo);
+            Report.extentTest.log(Status.PASS, "PÁGINA DE SELEÇÃO  ACESSADA COM SUCESSO!", ScreenShot.base64(driver));
+        } catch (Exception e) {
+            Report.extentTest.log(Status.FAIL, "NÃO FOI POSSÍVEL ACESSAR PÁGINA DE SELEÇÃO!", ScreenShot.base64(driver));
+        }
     }
 }
