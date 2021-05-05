@@ -31,9 +31,9 @@ public class CheckoutTask {
             waits.loadElement(checkoutPage.getTextTitle());
             String titulo = checkoutPage.getTextTitle().getText();
             Assertions.assertEquals("Test.allTheThings() T-Shirt (Red)", titulo);
-            Report.extentTest.log(Status.PASS, "PÁGINA DE SELEÇÃO  ACESSADA COM SUCESSO!", ScreenShot.base64(driver));
+            Report.extentTest.log(Status.PASS, "PÁGINA DE CHECKOUT  ACESSADA COM SUCESSO!", ScreenShot.base64(driver));
         } catch (Exception e) {
-            Report.extentTest.log(Status.FAIL, "NÃO FOI POSSÍVEL ACESSAR PÁGINA DE SELEÇÃO!", ScreenShot.base64(driver));
+            Report.extentTest.log(Status.FAIL, "NÃO FOI POSSÍVEL ACESSAR PÁGINA DE CHECKOUT!", ScreenShot.base64(driver));
         }
     }
 }

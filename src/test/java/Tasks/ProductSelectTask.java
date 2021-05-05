@@ -28,8 +28,8 @@ public class ProductSelectTask {
     private void validaProductSelect(){
         try{waits.loadElement(productSelectPage.getTextTitle());
             String titulo = productSelectPage.getTextTitle().getText();
-            Assertions.assertEquals("Products", titulo);
-            Report.extentTest.log(Status.PASS, "PÁGINA DE PRODUTOS  ACESSADA COM SUCESSO!", ScreenShot.base64(driver));
+            Assertions.assertEquals("PRODUCTS", titulo);
+            Report.extentTest.log(Status.PASS, "PÁGINA DE SELEÇÃO DE PRODUTOS  ACESSADA COM SUCESSO!", ScreenShot.base64(driver));
         }catch(Exception e) {
             Report.extentTest.log(Status.FAIL, "NÃO FOI POSSÍVEL ACESSAR PÁGINA DE PRODUTOS!", ScreenShot.base64(driver));
         }

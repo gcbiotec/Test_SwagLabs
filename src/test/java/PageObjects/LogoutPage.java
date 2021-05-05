@@ -22,4 +22,5 @@ public class LogoutPage {
 
         return this.driver.findElement(By.id("logout_sidebar_link"));
     }
+
 }

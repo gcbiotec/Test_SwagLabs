@@ -21,6 +21,6 @@ public class OverviewPage {
     }
 
     public WebElement getTextTitle() {
-        return this.driver.findElement(By.id("back-to-products"));
+        return this.driver.findElement(By.id("finish"));
     }
 }

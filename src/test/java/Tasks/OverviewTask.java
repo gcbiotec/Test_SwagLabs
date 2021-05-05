@@ -31,8 +31,8 @@ public class OverviewTask {
         try {
             waits.loadElement(overviewPage.getTextTitle());
             String titulo = overviewPage.getTextTitle().getText();
-            Assertions.assertEquals("Back Home", titulo);
-            Report.extentTest.log(Status.PASS, "PÁGINA FINAL  ACESSADA COM SUCESSO!", ScreenShot.base64(driver));
+            Assertions.assertEquals("FINISH", titulo);
+            Report.extentTest.log(Status.PASS, "PÁGINA FINAL ACESSADA COM SUCESSO!", ScreenShot.base64(driver));
         } catch (Exception e) {
             Report.extentTest.log(Status.FAIL, "NÃO FOI POSSÍVEL ACESSAR PÁGINA FINAL!", ScreenShot.base64(driver));
         }

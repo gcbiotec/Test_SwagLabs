@@ -22,7 +22,7 @@ public class ProductSelectPage {
 
     public WebElement getTextTitle(){
 
-        return this.driver.findElement(By.xpath("//div[@class='header_secondary_container']/div[@class='title']"));
+        return this.driver.findElement(By.xpath("//div[@class='header_secondary_container']/span[@class='title']"));
 
     }
 
